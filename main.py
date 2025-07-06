@@ -16,7 +16,7 @@ except ValueError:
 time.sleep(3)
 os.system('clear')
 print(Colorate.Vertical(Colors.red_to_purple, pyfiglet.figlet_format('rew', font='this')))
-print(Colorate.Vertical(Colors.red_to_purple, 'тулкит для управления телеграм ботами и готовыми скриптами'))
+print(Colorate.Vertical(Colors.red_to_purple, 'тулкит для управления телеграм ботами'))
 print(' ')
 print(Colorate.Vertical(Colors.red_to_white, Box.DoubleCube('''1. режим сбора информации
 2. авто-ответчик
