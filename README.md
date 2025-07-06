@@ -12,9 +12,15 @@
 <h2>режим чата💬</h2>
 получай сообщения и отвечай на них<br>
 
-#устоновка
+устоновка:
 
-```git clone
+```
+git clone https://github.com/mazzarela/rew.git
 
+pip3 install pytelegrambotapi
 
+pip3 install pyfiglet
+
+pip3 install pystyle
+```
 
