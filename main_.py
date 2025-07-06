@@ -99,8 +99,8 @@ if choice == '4':
             if type(message.from_user.last_name) == NoneType:
                 fnln = message.from_user.first_name
 
-            print(f'{fnln}(id: {idd1}, юзернейм: {username}): {message.text}')
-            textt = input(Colorate.Horizontal(Colors.red_to_purple, 'текст для ответа (нечего не пиши чтобы промолчать): '))
+            print(f'{fnln}(id: {idd1}, юзернейм: {username}): {message.text}\n')
+            textt = input(Colorate.Horizontal(Colors.red_to_purple, '> '))
             if textt != '':
                 b.send_message(message.chat.id, textt)
             else:
