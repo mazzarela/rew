@@ -17,6 +17,8 @@
 ```
 git clone https://github.com/mazzarela/rew.git
 
+cd rew
+
 pip3 install pytelegrambotapi
 
 pip3 install pyfiglet
@@ -26,11 +28,9 @@ pip3 install pystyle
 <br>
 <br>
 
-запуск программы осуществляется с помощью этих команд:
+запуск программы осуществляется с помощью этой команды:
 
 ```
-cd rew
-
 python3 main.py
 ```
 
