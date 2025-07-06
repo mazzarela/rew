@@ -14,7 +14,7 @@ except ValueError:
     exit()
 
 time.sleep(3)
-os.system('clear')
+os.system('cls')
 print(Colorate.Vertical(Colors.red_to_purple, pyfiglet.figlet_format('rew', font='this')))
 print(Colorate.Vertical(Colors.red_to_purple, 'тулкит для управления телеграм ботами и готовыми скриптами'))
 print(' ')
