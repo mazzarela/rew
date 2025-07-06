@@ -23,4 +23,15 @@ pip3 install pyfiglet
 
 pip3 install pystyle
 ```
+<br>
+<br>
+
+запуск программы осуществляется с помощью этих команд:
+
+```
+cd rew
+
+python3 main.py
+```
+
 
