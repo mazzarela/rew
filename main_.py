@@ -8,8 +8,11 @@ import keyboard
 
 
 def send_message(id_user):
-    text_message = input(Colorate.Horizontal(Colors.red_to_purple, '> '))
-    b.send_message(id_user, text_message)
+    try:
+        text_message = input(Colorate.Horizontal(Colors.red_to_purple, '> '))
+        b.send_message(id_user, text_message)
+    except:
+        pass
     
 try:
     api_token = input(Colorate.Horizontal(Colors.red_to_purple, 'api токен телеграм бота: '))
