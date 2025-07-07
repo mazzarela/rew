@@ -4,6 +4,14 @@ from pystyle import *
 import os
 import time
 from types import NoneType
+import keyboard
+
+
+def send_message(id_user):
+    text_message = input(Colorate.Horizontal(Colors.red_to_purple, '> '))
+    b.send_message(id_user, text_message)
+
+
 try:
     api_token = input(Colorate.Horizontal(Colors.red_to_purple, 'api токен телеграм бота: '))
 
@@ -79,15 +87,9 @@ if choice == '4':
     print(Colorate.Horizontal(Colors.green_to_yellow,
                               'активирован режим чата с определенным пользователем'))
     idd = input(Colorate.Horizontal(Colors.red_to_purple, 'id пользователя с которым ты хочешь ввести диалог: '))
-    textt1 = input(Colorate.Horizontal(Colors.red_to_purple, 'текст для начала чата (нечего не пиши чтобы промолчать): '))
-
-    if textt1 != '':
-        b.send_message(int(idd), textt1)
-        print(Colorate.Horizontal(Colors.green_to_yellow,
-                                  'отправлено, ожидай ответ'))
-    else:
-        print(Colorate.Horizontal(Colors.green_to_yellow,
-                                  'ты промолчал, жди сообщения'))
+    print(Colorate.Horizontal(Colors.green_to_yellow,
+                              'чат начался! написать сообщение пользователю ты можешь нажав ctrl + r'))
+    keyboard.add_hotkey('ctrl+r', lambda: send_message(idd))
     @b.message_handler(content_types=['text'])
     def texttt(message):
         if message.from_user.id == int(idd):
@@ -99,14 +101,7 @@ if choice == '4':
             if type(message.from_user.last_name) == NoneType:
                 fnln = message.from_user.first_name
 
-            print(f'{fnln}(id: {idd1}, юзернейм: {username}): {message.text}\n')
-            textt = input(Colorate.Horizontal(Colors.red_to_purple, '> '))
-            if textt != '':
-                b.send_message(message.chat.id, textt)
-            else:
-                pass
-        else:
-            pass
+            print(f'{fnln}(id: {idd1}, юзернейм: {username}): {message.text}')
     b.infinity_polling()
 
 
