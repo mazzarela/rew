@@ -31,7 +31,7 @@ print(' ')
 print(Colorate.Vertical(Colors.red_to_white, Box.DoubleCube('''1. режим сбора информации
 2. авто-ответчик
 3. спам (может привести к последствиям)
-4. чат с определенным пользователем
+4. сообщение пользователю
 ''')))
 print(' ')
 choice = input(Colorate.Horizontal(Colors.red_to_purple, 'выбор: '))
@@ -87,24 +87,16 @@ if choice == '3':
             time.sleep(float(tm))
 if choice == '4':
     print(Colorate.Horizontal(Colors.green_to_yellow,
-                              'активирован режим чата с определенным пользователем'))
-    idd = input(Colorate.Horizontal(Colors.red_to_purple, 'id пользователя с которым ты хочешь ввести диалог: '))
-    print(Colorate.Horizontal(Colors.green_to_yellow,
-                              'чат начался! написать сообщение пользователю ты можешь нажав ctrl + r'))
-    keyboard.add_hotkey('ctrl+r', lambda: send_message(idd))
-    @b.message_handler(content_types=['text'])
-    def texttt(message):
-        if message.from_user.id == int(idd):
-            username = '@' + str(message.from_user.username)
-            fnln = message.from_user.first_name + ' ' + str(message.from_user.last_name)
-            idd1 = message.from_user.id
-            if type(message.from_user.username) == NoneType:
-                username = 'отсутствует'
-            if type(message.from_user.last_name) == NoneType:
-                fnln = message.from_user.first_name
-
-            print(f'{fnln}(id: {idd1}, юзернейм: {username}): {message.text}')
-    b.infinity_polling()
+                              'выбрана функция отправки сообщения'))
+    idd = input(Colorate.Horizontal(Colors.red_to_purple, 'id пользователя которому нужно отправить сообщение: '))
+    msgg = input(Colorate.Horizontal(Colors.red_to_purple, 'сообщение: '))
+    try:
+        b.send_message(idd, msgg)
+    except:
+        print(Colorate.Horizontal(Colors.red_to_blue, 'возникла ошибка с отправкой, проверь, правильно ли ты все написал'))
+    
+    
+   
 
 
 
